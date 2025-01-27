@@ -21,13 +21,14 @@ public class BookingDAO {
     }
     public void addBooking(Booking booking) throws SQLException
     {
-        String query="Insert booking values(?,?,?)";
+        String query="Insert booking values(?,?,?,?)";
         Connection con=DBconnection.getConnection();
         PreparedStatement pst=con.prepareStatement(query);
         pst.setString(1,booking.passangerName);
         pst.setInt(2,booking.busNo);
         java.sql.Date sqlDate=new java.sql.Date(booking.date.getTime());
         pst.setDate(3,sqlDate);
+        pst.setString(4,booking.email);
         pst.executeUpdate();
 
 

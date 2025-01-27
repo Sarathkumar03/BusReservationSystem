@@ -7,11 +7,14 @@ public class Booking {
     String passangerName;
     int busNo;
     Date date;
+    String email;
     Booking()
     {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter name of passenger:");
         passangerName=sc.nextLine();
+        System.out.println("please enter email address:");
+        email=sc.nextLine();
         System.out.println("enter bus number:");
         busNo=sc.nextInt();
         System.out.println("enter date dd-MM-yyyy:");
@@ -31,6 +34,24 @@ public class Booking {
         int booked=bookingDAO.getbookCount(busNo,date);
 
         return booked<capacity?true:false;
+    }
+
+
+
+    public String getPassengerName() {
+        return passangerName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getBusNo() {
+        return busNo;
+    }
+
+    public Date getDate() {
+        return date;
     }
 
 

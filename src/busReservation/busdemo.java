@@ -35,6 +35,8 @@ public class busdemo {
                     {
                         BookingDAO bookingDAO=new BookingDAO();
                         bookingDAO.addBooking(booking);
+                        Emailsend emailsend=new Emailsend(booking);
+
                         System.out.println("your booking is confirm");
                     }
                     else {
